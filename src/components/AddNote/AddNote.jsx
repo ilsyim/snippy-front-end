@@ -1,17 +1,37 @@
+import { useState } from 'react';
+import * as noteService from '../../services/noteService'
 
+const AddNote = (props) => {
+  const [noteData, setNoteData] = useState({
+    unit:"",
+    content:""
+  })
 
-const AddNote = () => {
+  const handleChange = evt => {
+    setNoteData({...noteData, [evt.target.name]: evt.target.value})
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.setNotes([...props.notes, noteData])
+    setNoteData({unit:"", content:""})
+    console.log('submit')
+
+  }
+
   return (
     <>
       <h2>Take Notes While Reviewing the Video</h2>
-      <form action="">
-        <select name="unit" >
-          <option value="1" selected>Unit 1</option>
-          <option value="2">Unit 2</option>
-          <option value="3">Unit 3</option>
-          <option value="4">Unit 4</option>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <select name="unit" onChange={handleChange} >
+          <option>Select Unit</option>
+          <option name="unit" value={noteData.unit[""]}>Unit 1</option>
+          <option name="unit" value={noteData.unit[""]}>Unit 2</option>
+          <option name="unit" value={noteData.unit[""]}>Unit 3</option>
+          <option name="unit" value={noteData.unit[""]}>Unit 4</option>
         </select>
-        <textarea type="text" name="content" id="" cols="30" rows="10" placeholder="Insert Notes Here..."></textarea>
+        <textarea type="text" value={noteData.content} name="content" onChange={handleChange} id="" cols="30" rows="10" placeholder="Insert Notes Here..."></textarea>
+        <button type="submit">Add</button>
       </form>
     </>
   );

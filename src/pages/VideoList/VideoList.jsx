@@ -4,7 +4,7 @@ import AddNote from '../../components/AddNote/AddNote';
 const VideoList = (props) => {
   return (
     <>
-      <AddNote />
+      <AddNote notes={props.notes} setNotes={props.setNotes}/>
       <VideoCard notes={props.notes} />
     </>
   );
