@@ -6,10 +6,21 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav>
           <ul>
-            <li>Welcome, {user.name}</li>
-            <li><Link to="/profiles">Profiles</Link></li>
+            <li>{user.name}</li>
+            searchbar
             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
             <li><Link to="/changePassword">Change Password</Link></li>
+            <br/>
+            <li><Link to="/allVideos">All Videos</Link></li>
+            <li>
+              <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+              <a href="https://ga-clippy.com" target="_blank" rel="noopener noreferrer">Clippy</a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN</a>
+            </li>
           </ul>
         </nav>
       :
