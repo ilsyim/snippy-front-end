@@ -29,7 +29,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<VideoList user={user} notes={notes} />} />
+        <Route path="/" element={<VideoList user={user} notes={notes} setNotes={setNotes}/>} />
         <Route path="/videoShow" element={<VideoShow />} />
         <Route
           path="/signup"
