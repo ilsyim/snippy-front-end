@@ -1,5 +1,7 @@
 import styles from './Landing.module.css'
 
+//ALL VIDEOS SHOW HERE
+
 const Landing = ({ user }) => {
   return (
     <main className={styles.container}>
