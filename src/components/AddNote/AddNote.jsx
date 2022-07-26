@@ -29,7 +29,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
 
   return (
     <>
-      <h2>Take Notes While Reviewing the Video</h2>
+      <h2>Take Notes While Reviewing the Video:</h2>
       <form onSubmit={handleSubmit} autoComplete="off" ref={formElement}>
         <select name="unit" onChange={handleChange} >
           <option>Select Unit</option>
