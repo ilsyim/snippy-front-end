@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -8,12 +8,13 @@ import VideoList from './pages/VideoList/VideoList'
 import VideoShow from './pages/VideoShow/VideoShow'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import * as noteService from './services/noteService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
 
-  const [notes, setNotes] = useState([])
+  // const [notes, setNotes] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -25,12 +26,17 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  // const handleAddNote = async (noteData) => {
+  //   const newNote = await noteService.addNote(noteData)
+  //   setNotes([...notes, newNote])
+  // }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<VideoList user={user} notes={notes} setNotes={setNotes}/>} />
-        <Route path="/videoShow" element={<VideoShow />} />
+        <Route path="/" element={<VideoList user={user} />} />
+        <Route path="/videoShow" element={<VideoShow  />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

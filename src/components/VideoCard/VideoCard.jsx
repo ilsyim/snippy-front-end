@@ -1,8 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import YoutubeEmbed1 from '../YoutubeEmbed1/YoutubeEmbed1';
-import YouTubeEmbed1 from '../YoutubeEmbed1/YoutubeEmbed1'
+import { useEffect} from 'react';
 
-const VideoCard = ({notes}) => {
+
+
+const VideoCard = ({notes, setNoteData}) => {
+  const location = useLocation()
+
+  // useEffect(()=>{
+  //   const fetchNote = async() => {
+  //     const noteData = await (location.state.note)
+
+  //     setNoteData(noteData)
+  //   }
+  //   fetchNote()
+  // // },[location.state.note])
+
   return (
     <>
       {/* < YoutubeEmbed1 /> */}
