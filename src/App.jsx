@@ -9,11 +9,12 @@ import VideoShow from './pages/VideoShow/VideoShow'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
 
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState('')
 
   const handleLogout = () => {
     authService.logout()

@@ -8,9 +8,9 @@ const VideoShow = (props) => {
   return (
     <>
       <div>
-
+        <h1>VideoShow</h1>
         <div><YoutubeEmbed1 /></div>
-        <div><NoteShow notes={props.notes}/></div>
+        <div><NoteShow /></div>
       </div>
     </>
   );

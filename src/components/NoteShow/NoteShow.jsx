@@ -2,8 +2,11 @@ import EditNote from '../../components/EditNote/EditNote'
 import AddNote from '../AddNote/AddNote';
 
 const NoteShow = (props) => {
+
+
   return (
     <>
+    <h1>I'm working</h1>
       {props.note.length?
       <>
         <h2>Note Details</h2>

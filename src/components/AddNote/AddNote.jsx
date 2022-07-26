@@ -7,32 +7,34 @@ const AddNote = (props) => {
     content:""
   })
 
-  const handleChange = evt => {
+  const handleNoteChange = evt => {
     setNoteData({...noteData, [evt.target.name]: evt.target.value})
   }
 
-  const handleSubmit = evt => {
+  const handleNoteSubmit = async evt => {
     evt.preventDefault()
+    const res = await noteService.addNote(noteData)
+    console.log(res)
     props.setNotes([...props.notes, noteData])
     setNoteData({unit:"", content:""})
-    console.log('submit')
 
   }
 
   return (
     <>
       <h2>Take Notes While Reviewing the Video</h2>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <select name="unit" onChange={handleChange} >
+      <form onSubmit={handleNoteSubmit} autoComplete="off">
+        <select name="unit" onChange={handleNoteChange} >
           <option>Select Unit</option>
           <option name="unit" value={noteData.unit[""]}>Unit 1</option>
           <option name="unit" value={noteData.unit[""]}>Unit 2</option>
           <option name="unit" value={noteData.unit[""]}>Unit 3</option>
           <option name="unit" value={noteData.unit[""]}>Unit 4</option>
         </select>
-        <textarea type="text" value={noteData.content} name="content" onChange={handleChange} id="" cols="30" rows="10" placeholder="Insert Notes Here..."></textarea>
+        <textarea type="text" value={noteData.content} name="content" onChange={handleNoteChange} id="" cols="30" rows="10" placeholder="Insert Notes Here..."></textarea>
         <button type="submit">Add</button>
       </form>
+      {}
     </>
   );
 }
