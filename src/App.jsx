@@ -9,6 +9,7 @@ import VideoShow from './pages/VideoShow/VideoShow'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import * as noteService from './services/noteService'
+import EditNote from './components/EditNote/EditNote'
 
 
 const App = () => {
@@ -42,6 +43,13 @@ const App = () => {
     setNotes(newNotesArray)
   }
 
+  const handleUpdateNote = async (noteData) => {
+    const updatedNote = await noteService.updateNote(noteData)
+    const newNotesArray = notes.map(note => note._id === updatedNote._id ? updatedNote : note)
+    setNotes(newNotesArray)
+    navigate('/videoShow')
+  }
+
 
   return (
     <>
@@ -49,6 +57,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<VideoList user={user} />} />
         <Route path="/videoShow" element={<VideoShow  user={user} notes={notes} setNotes={setNotes} handleDeleteNote={handleDeleteNote}/>} />
+        <Route
+          path="/edit"
+          element={<EditNote handleUpdateNote={handleUpdateNote}/>}
+        />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

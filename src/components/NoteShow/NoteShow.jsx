@@ -2,13 +2,12 @@ import EditNote from '../../components/EditNote/EditNote'
 import AddNote from '../AddNote/AddNote';
 import { useState, useEffect } from 'react';
 import * as noteService from '../../services/noteService'
-import { useLocation } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
+
 
 
 const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
-
   const location = useLocation()
-
 
   const handleAddNote = async (noteData) => {
     const newNote = await noteService.addNote(noteData)
@@ -16,13 +15,6 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
     setNotes([...notes, newNote])
     console.log(notes, 'NOTES IN STATE')
   }
-
-  // const handleSubmit = async evt => {
-  //   evt.preventDefault()
-  //   handleAddNote(noteData)
-  //   // setNotes([...notes, noteData])
-  //   setNoteData({unit:"", content:""})
-  // }
 
   return (
     <>
@@ -38,7 +30,7 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
             <>
             {user?.profile === note.owner._id &&
               <>
-                <button>Edit</button>
+                <Link to='/edit' state={{note}}>Edit</Link>
                 <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
                 <div>
                   {note.content}
