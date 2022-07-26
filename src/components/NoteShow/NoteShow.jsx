@@ -1,21 +1,18 @@
 import EditNote from '../../components/EditNote/EditNote'
 import AddNote from '../AddNote/AddNote';
 
-const NoteShow = (props) => {
-
-
+const NoteShow = ({handleAddNote, notes}) => {
   return (
     <>
-    <h1>I'm working</h1>
-      {props.note.length?
+      {notes.length?
       <>
         <h2>Note Details</h2>
         <button>Edit</button>
         <button>Delete</button>
-        <p>{props.note.content}</p>
+        <p>{notes.content}</p>
       </>
       :
-        <AddNote />
+        <AddNote handleAddNote={handleAddNote} state={{notes}}/>
       }
       
     </>
