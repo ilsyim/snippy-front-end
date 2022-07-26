@@ -9,8 +9,8 @@ const VideoShow = (props) => {
       <div>
         <h1>VideoShow</h1>
         <div><YoutubeEmbed1 /></div>
-        <div><NoteShow /></div>
-        <div><NoteShow notes={props.notes} handleAddNote={props.handleAddNote}/></div>
+        <div><NoteShow user={props.user}notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote}/></div>
+        {/* <div><NoteShow notes={props.notes} handleAddNote={props.handleAddNote}/></div> */}
       </div>
     </>
   );
