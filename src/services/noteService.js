@@ -14,9 +14,14 @@ async function addNote(noteData) {
   return await res.json()
 }
 
+async function show(noteId) {
+  const res = await fetch(`${BASE_URL}/${noteId}`)
+  return await res.json()
+}
 
 
 
 export {
-  addNote, 
+  addNote,
+  show
 }
