@@ -9,12 +9,21 @@ import VideoShow from './pages/VideoShow/VideoShow'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import * as noteService from './services/noteService'
+import EditNote from './components/EditNote/EditNote'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [notes, setNotes] = useState([])
   const navigate = useNavigate()
 
-  // const [notes, setNotes] = useState([])
+  useEffect(()=>{
+    const fetchNote = async() => {
+      const noteData = await noteService.show()
+      setNotes(noteData)
+    }
+    fetchNote()
+  },[])
 
   const handleLogout = () => {
     authService.logout()
@@ -26,17 +35,32 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  // const handleAddNote = async (noteData) => {
-  //   const newNote = await noteService.addNote(noteData)
-  //   setNotes([...notes, newNote])
-  // }
+  const handleDeleteNote = async noteId => {
+
+    console.log(noteId)
+    const deletedNote = await noteService.deleteNote(noteId)
+    const newNotesArray = notes.filter(note => note._id !== deletedNote._id)
+    setNotes(newNotesArray)
+  }
+
+  const handleUpdateNote = async (noteData) => {
+    const updatedNote = await noteService.updateNote(noteData)
+    const newNotesArray = notes.map(note => note._id === updatedNote._id ? updatedNote : note)
+    setNotes(newNotesArray)
+    navigate('/videoShow')
+  }
+
 
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<VideoList user={user} />} />
-        <Route path="/videoShow" element={<VideoShow  />} />
+        <Route path="/videoShow" element={<VideoShow  user={user} notes={notes} setNotes={setNotes} handleDeleteNote={handleDeleteNote}/>} />
+        <Route
+          path="/edit"
+          element={<EditNote handleUpdateNote={handleUpdateNote}/>}
+        />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

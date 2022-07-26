@@ -1,29 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import * as noteService from '../../services/noteService'
-import { useLocation } from 'react-router-dom';
 
-const AddNote = (props) => {
+
+const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
   const formElement = useRef()
   const [noteData, setNoteData] = useState({
     unit:"",
     content:""
   })
-  const [notes, setNotes] = useState([])
-
-  const location = useLocation()
-
-  // useEffect(() => {
-  //   const fetchNote = async () => {
-  //     const noteData = await show(location.state.note._id)
-  //     props.setNote(noteData)
-  //   }
-  //   fetchNote()
-  // }, [location.state.note._id])
-
-  const handleAddNote = async (noteData) => {
-    const newNote = await noteService.addNote(noteData)
-    setNotes([...notes, newNote])
-  }
 
   const handleChange = evt => {
     setNoteData({...noteData, [evt.target.name]: evt.target.value})
@@ -31,9 +15,11 @@ const AddNote = (props) => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    handleAddNote(noteData)
-    setNotes([...notes, noteData])
-    setNoteData({unit:"", content:""})
+    try{
+      handleAddNote(noteData)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const {unit, content} = noteData
@@ -55,6 +41,7 @@ const AddNote = (props) => {
         <textarea value={noteData.content} name="content" onChange={handleChange} id="" cols="30" rows="10" placeholder="Insert Notes Here..."></textarea>
         <button disabled={isFormInvalid()} type="submit">Add</button>
       </form>
+      {}
     </>
   );
 }

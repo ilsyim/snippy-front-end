@@ -1,33 +1,31 @@
 import { Link } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
-        <nav>
-          <ul>
-            <li>{user.name}</li>
-            searchbar
-            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-            <li><Link to="/changePassword">Change Password</Link></li>
+        <nav >
+          {user.name}
+          searchbar
+            <Link to="" onClick={handleLogout} className={styles.navSpacing}>LOG OUT</Link>
+            <Link to="/changePassword" className={styles.navSpacing}>Change Password</Link>
             <br/>
-            <li><Link to="/allVideos">All Videos</Link></li>
-            <li>
-              <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </li>
-            <li>
-              <a href="https://ga-clippy.com" target="_blank" rel="noopener noreferrer">Clippy</a>
-            </li>
-            <li>
-              <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN</a>
-            </li>
-          </ul>
+            <Link to="/allVideos" className={styles.navSpacing}>All Videos</Link>
+            
+              <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className={styles.navSpacing}>GitHub</a>
+            
+            
+              <a href="https://ga-clippy.com" target="_blank" rel="noopener noreferrer" className={styles.navSpacing}>Clippy</a>
+            
+            
+              <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" className={styles.navSpacing}>MDN</a>
         </nav>
       :
         <nav>
           <ul>
-            <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
+            <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
           </ul>
         </nav>
       }
