@@ -17,6 +17,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
     evt.preventDefault()
     try{
       handleAddNote(noteData)
+      setNoteData({unit:[0], content:""})
     } catch (err) {
       console.log(err)
     }
@@ -31,7 +32,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
     <>
       <h2>Take Notes While Reviewing the Video:</h2>
       <form onSubmit={handleSubmit} autoComplete="off" ref={formElement}>
-        <select name="unit" onChange={handleChange} >
+        <select name="unit" onChange={handleChange} value={noteData.unit} >
           <option>Select Unit</option>
           <option name="unit" value={noteData.unit[""]}>1</option>
           <option name="unit" value={noteData.unit[""]}>2</option>
