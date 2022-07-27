@@ -6,7 +6,7 @@ const NavBar = ({ user, handleLogout }) => {
       <nav className="navbar bg-light fixed-top">
         <div className="container-fluid">
           <img className="navbar-brand" style={{width: 40}} src="./ostrich-svgrepo-com.svg" alt="SNIPPY logo" />
-          <a className="navbar-brand" href="#">SNIPPY</a>
+          <a className="navbar-brand" href="/">SNIPPY</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -20,7 +20,7 @@ const NavBar = ({ user, handleLogout }) => {
 
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">Home</a>
+                  <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
