@@ -54,7 +54,7 @@
   flex-direction: column;
 }
 
-.dropdown {
+.selectDropdown {
   width: 120px;
   background-color: #cfd8d7;
 }
@@ -88,4 +88,20 @@
   max-height: 20vh;
 }
 
+#homeLink:hover {
+  color: #fb5c5b;
+}
+
+.nav-link {
+  color: #04242c;
+}
+
+.nav-link:hover {
+  color: #fb5c5b;
+}
+
+.dropdown-item:hover {
+  background-color: #fb5c5b;
+  color: #04242c;
+}
 /*daf44a*/

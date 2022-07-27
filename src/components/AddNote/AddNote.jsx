@@ -33,7 +33,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
       <h2 className='takeNotes'>Take Notes While Reviewing the Video:</h2>
         <form onSubmit={handleSubmit} autoComplete="off" ref={formElement}>
           <div className='noteForm'>
-            <select className='dropdown' name="unit" onChange={handleChange} value={noteData.unit} >
+            <select className='selectDropdown' name="unit" onChange={handleChange} value={noteData.unit} >
               <option>Select Unit</option>
               <option name="unit" value={noteData.unit[""]}>1</option>
               <option name="unit" value={noteData.unit[""]}>2</option>
