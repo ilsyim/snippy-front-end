@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       <nav className="navbar bg-light fixed-top">
         <div className="container-fluid">
-          <img className="navbar-brand" style={{width: 40}} src="./ostrich-svgrepo-com.svg" alt="SNIPPY logo" />
+          <img id="ostrich" className="navbar-brand" style={{width: 40}} src="./ostrich-svgrepo-com.svg" alt="SNIPPY logo" />
           <a className="navbar-brand" href="/">SNIPPY</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span className="navbar-toggler-icon"></span>
