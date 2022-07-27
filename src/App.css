@@ -1,14 +1,6 @@
-.LoginMessage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30vh 0 0 0;
-  font-size: 24px;
-}
-
 .bottomNav {
   position: fixed;
-  bottom: 10px;
+  bottom: 40px;
 }
 
 .videoCard {
@@ -74,11 +66,10 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #cfd8d7;;
-  border: solid 3px #38182f;
-  margin: 10px;
+  border-bottom: solid 1px #6e99ae;
+
   color: black;
   padding: 5px;
-
   max-height: 40px;
 }
 
@@ -91,6 +82,7 @@
   text-shadow: 6px 6px 6px black;
   color: #6e99ae;
   text-align: center;
+  margin-top: 30px;
 }
 
 .scrollContainer {
@@ -104,14 +96,19 @@
 
 .nav-link {
   color: #04242c;
+  font-size: 25px;
+}
+
+.offcanvas-title {
+  font-size: 30px;
 }
 
 .nav-link:hover {
   color: #8ea604;
 }
 
-.nav-item {
-  background-color:;
+.dropdown-item {
+  font-size: 22px;
 }
 
 .dropdown-item:hover {
@@ -178,4 +175,47 @@ img {
 .navbar-brand:hover {
   color: #8ea604;
 }
-/*daf44a*/
+
+.LoginMessage {
+  color: #04242c;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  margin-top: 180px;
+  margin-right: 0;
+  background-color: #cfd8d7;
+  text-align: center;
+  padding: 40px;
+}
+
+#ostrich {
+  margin: 0 0 0 8px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  margin: 40px 0;
+  border: solid 1px #cfd8d7;
+}
+
+#introMsg {
+  margin: 30px;
+  font-size: 25px;
+}
+
+#loginNow {
+  font-size: 28px;
+}
+
+#welcome {
+  font-size: 30px;
+}
