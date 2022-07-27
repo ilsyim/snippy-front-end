@@ -43,6 +43,7 @@ const SignupForm = props => {
   }
 
   return (
+    <div className={styles.loginSignUp}>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -94,7 +95,7 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
+      {/* <div className={styles.inputContainer}>
         <label htmlFor="photo-upload" className={styles.label}>
           Upload Photo
         </label>
@@ -104,16 +105,17 @@ const SignupForm = props => {
           name="photo"
           onChange={handleChangePhoto}
         />
-      </div>
+      </div> */}
       <div className={styles.inputContainer}>
         <button disabled={isFormInvalid()} className={styles.button}>
           Sign Up
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.cancel}>Cancel</button>
         </Link>
       </div>
     </form>
+    </div>
   )
 }
 

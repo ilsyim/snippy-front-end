@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+</style>
 
 const NavBar = ({ user, handleLogout }) => {
   return (
@@ -48,7 +51,7 @@ const NavBar = ({ user, handleLogout }) => {
                 </div>
               </ul>
                 :
-                <nav className="navbar bg-light">
+                <nav className="navbar">
                   <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li className="nav-item">
                       <Link to="/login" className="nav-link">Log In</Link>
