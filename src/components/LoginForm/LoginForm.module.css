@@ -2,15 +2,36 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 50px;
 }
 
 .label,
 .button {
   margin-right: 0.5rem;
+  border-radius: 7px;
 }
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+
+.loginSignUp {
+  background-color: #cfd8d7;
+  padding: 60px 60px 0 60px;
+  margin-top: 70px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.cancel {
+  border-radius: 7px;
+}
+
+.button:hover, .cancel:hover {
+  background-color: #335363;
+  color: white;
 }

@@ -1,7 +1,8 @@
 import AddNote from '../AddNote/AddNote';
 import * as noteService from '../../services/noteService'
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan, faPencil } from '@fortawesome/free-solid-svg-icons'
 
 
 const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
@@ -25,8 +26,8 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
                 <div className='noteWithBtns'>
                   {note.content}
                     <div>
-                      <button><Link to='/edit' state={{note}}>Edit</Link></button>
-                      <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                      <button className='edit'><Link className='edit'to='/edit' state={{note}}><FontAwesomeIcon icon={faPencil}/></Link></button>
+                      <button className='delete' onClick={() => handleDeleteNote(note._id)}><FontAwesomeIcon icon={faTrashCan}/></button>
                     </div>
                 </div>
               </>

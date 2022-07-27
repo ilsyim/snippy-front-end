@@ -27,6 +27,7 @@ const LoginForm = props => {
   }
 
   return (
+    <div className={styles.loginSignUp}>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -57,10 +58,11 @@ const LoginForm = props => {
       <div>
         <button className={styles.button}>Log In</button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.cancel}>Cancel</button>
         </Link>
       </div>
     </form>
+    </div>
   )
 }
 

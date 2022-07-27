@@ -41,7 +41,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
               <option name="unit" value={noteData.unit[""]}>4</option>
             </select>
             <textarea className="textArea" value={noteData.content} name="content" onChange={handleChange} id="" cols="120" rows="10" placeholder="Insert Notes Here..."></textarea>
-            <button disabled={isFormInvalid()} type="submit">Add</button>
+            <button className='addBtn' disabled={isFormInvalid()} type="submit">Add</button>
           </div>
         </form>
     </>
