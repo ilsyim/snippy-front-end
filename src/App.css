@@ -1,0 +1,91 @@
+.LoginMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30vh 0 0 0;
+  font-size: 24px;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 10px;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 45px;
+  padding: 40px;
+  background-color: #daf44a;
+  border: solid 3px white;
+  border-radius: 50px;
+}
+
+.videoContainerDiv {
+  color: #04242c;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.takeNoteBtn {
+  margin: 15px;
+  background-color: white;
+
+}
+
+.videoShow{
+  margin-top: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.noteForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  width: 120px;
+  background-color: #cfd8d7;
+}
+
+.noteWithBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #cfd8d7;;
+  border: solid 3px #38182f;
+  margin: 10px;
+  color: black;
+  padding: 5px;
+
+  max-height: 40px;
+}
+
+.textArea {
+  overflow-y: auto;
+  background-color: #cfd8d7;
+}
+
+.takeNotes {
+  text-shadow: 6px 6px 6px black;
+  color: #00afb5;
+  text-align: center;
+}
+
+.scrollContainer {
+  overflow-y: auto;
+  max-height: 20vh;
+}
+
+/*daf44a*/

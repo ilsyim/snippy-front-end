@@ -16,22 +16,26 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
 
   return (
     <>
-      {notes.map((note, idx) => 
-        <div key={idx}>
-          <>
-          {user?.profile === note.owner._id &&
+      <div className="scrollContainer">
+        {notes.map((note, idx) => 
+          <div key={idx}>
             <>
-              <Link to='/edit' state={{note}}>Edit</Link>
-              <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
-              <div>
-                {note.content}
-              </div>
+            {user?.profile === note.owner._id &&
+              <>
+                <div className='noteWithBtns'>
+                  {note.content}
+                    <div>
+                      <button><Link to='/edit' state={{note}}>Edit</Link></button>
+                      <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                    </div>
+                </div>
+              </>
+            }
             </>
-          }
-          </>
-        </div>
-      )}
-      <AddNote handleAddNote={handleAddNote} notes={notes} setNotes={setNotes} user={user} />
+          </div>
+        )}
+      </div>
+        <AddNote handleAddNote={handleAddNote} notes={notes} setNotes={setNotes} user={user} />
     </>
   )
 }

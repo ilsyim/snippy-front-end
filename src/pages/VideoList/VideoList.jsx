@@ -7,11 +7,15 @@ const VideoList = (props) => {
   
   return (
     <>
+      {props.user ? 
       <div>
         <VideoCard notes={props.notes} />
       </div>
+      
+      : <div className="LoginMessage"><p>Login to take notes</p></div>
+      }
     </>
   );
 }
 
-export default VideoList; 
+export default VideoList;
