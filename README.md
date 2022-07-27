@@ -15,11 +15,17 @@ Snippy is an app for people who like keeping their notes organized. (Re)watch th
 ![Landing](/public/landingPage.png)
 ![Home](/public/homePage.png)
 ## Technologies Used:
-React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Font Awesome
+React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Font Awesome, 
 
 
 ## Credits:  
-- 
+- [Ben Manley's Youtube](https://www.youtube.com/channel/UCUuibJM8qV3Y6WoNCetWvRQ)
+- [Ostrich](https://www.svgrepo.com/svg/252873/ostrich)
+- [Google Fonts: Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed?query=barlow+condensed)
+- [Google Fonts: Titan One](https://fonts.google.com/specimen/Titan+One?query=titan+one)
+- [Clippy](https://ga-clippy.com/)
+- [MDN](https://developer.mozilla.org/en-US/)
+- [GitHub](https://github.com/)
 
 
 ## Next Steps:
