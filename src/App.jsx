@@ -10,6 +10,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import * as noteService from './services/noteService'
 import EditNote from './components/EditNote/EditNote'
+import styles from '../src/App.css'
 
 
 const App = () => {
