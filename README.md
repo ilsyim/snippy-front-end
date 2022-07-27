@@ -3,7 +3,7 @@
 Snippy is an app for people who like keeping their notes organized. (Re)watch the lecture and keep your notes in one place, along with some other sites you might need in the nav bar.
 
 ## Getting Started:
-- [Deployed front-end]()
+- [Deployed front-end](https://sei-snippy.netlify.app/)
 - [Back-End](https://github.com/ilsyim/snippy-back-end)
 
 ## Contributors:
