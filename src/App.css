@@ -76,6 +76,7 @@
 .textArea {
   overflow-y: auto;
   background-color: #cfd8d7;
+  width: 70vw;
 }
 
 .takeNotes {
@@ -218,4 +219,23 @@ iframe {
 
 #welcome {
   font-size: 30px;
+}
+
+.editH2 {
+  color: #6e99ae;
+  text-shadow: 6px 6px 6px black;
+}
+
+.editNote {
+  margin-top: 150px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  
 }
