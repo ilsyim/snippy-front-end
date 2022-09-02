@@ -1,0 +1,18 @@
+import YoutubeEmbed2 from "../../components/YouTubeEmbed2/YouTubeEmbed2";
+import NoteShow from "../../components/NoteShow/NoteShow";
+
+const VideoShow2 = (props) => {
+
+
+  return (
+    <>
+      <div className="videoShow">
+        <div><YoutubeEmbed2 /></div>
+        <div><NoteShow user={props.user} notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote}/></div>
+        {/* <div><NoteShow notes={props.notes} handleAddNote={props.handleAddNote}/></div> */}
+      </div>
+    </>
+  );
+}
+
+export default VideoShow2;
