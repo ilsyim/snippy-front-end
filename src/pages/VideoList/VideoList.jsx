@@ -9,7 +9,9 @@ const VideoList = (props) => {
     <>
       {props.user ? 
       <div>
-        <VideoCard notes={props.notes} />
+        {props.playlist.map(videoId=>
+          <VideoCard notes={props.notes} playlist={props.playlist} videoId={videoId}/>
+        )}
       </div>
       
       : <div className="LoginMessage">
