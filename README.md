@@ -19,17 +19,18 @@ React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Font Awesome,
 
 
 ## Credits:  
-- [Ben Manley's Youtube](https://www.youtube.com/channel/UCUuibJM8qV3Y6WoNCetWvRQ)
+- [Ben Manley's YouTube](https://www.youtube.com/channel/UCUuibJM8qV3Y6WoNCetWvRQ)
 - [Ostrich](https://www.svgrepo.com/svg/252873/ostrich)
 - [Google Fonts: Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed?query=barlow+condensed)
 - [Google Fonts: Titan One](https://fonts.google.com/specimen/Titan+One?query=titan+one)
 - [Clippy](https://ga-clippy.com/)
 - [MDN](https://developer.mozilla.org/en-US/)
 - [GitHub](https://github.com/)
+- [Rob Reynolds's YouTube playlist help](https://github.com/razorhollow)
 
 
 ## Next Steps:
 - [ ] Grab the YouTube timestamp in the comment.
-- [ ] Implement more/all YouTube videos.
+- [x] Implement more/all YouTube videos.
 - [ ] Sort notes by unit.
 - [ ] Implement a searchbar in the navigation so User can search through all their notes by unit.
