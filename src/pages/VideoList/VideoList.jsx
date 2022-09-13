@@ -1,17 +1,15 @@
 import VideoCard from '../../components/VideoCard/VideoCard'
-import AddNote from '../../components/AddNote/AddNote';
-import NoteShow from '../../components/NoteShow/NoteShow';
+
 
 const VideoList = (props) => {
-
   
   return (
     <>
       {props.user ? 
       <div>
-        {props.playlist.map(videoId=>
-          <VideoCard notes={props.notes} playlist={props.playlist} videoId={videoId}/>
-        )}
+        {props.playlist.map((video, idx) =>
+          <VideoCard key={idx} notes={props.notes} playlist={props.playlist} video={video}/>
+          )}
       </div>
       
       : <div className="LoginMessage">

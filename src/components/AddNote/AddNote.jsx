@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import * as noteService from '../../services/noteService'
+import { useState, useRef } from 'react';
 
 
-const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
+const AddNote = ({handleAddNote, setNotes, notes, user, videoId}) => {
   const formElement = useRef()
   const [noteData, setNoteData] = useState({
-    unit:"",
-    content:""
+    unit: "",
+    content: "",
+    videoId: `${videoId}`
   })
 
   const handleChange = evt => {
@@ -16,7 +16,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try{
-      handleAddNote(noteData)
+      handleAddNote(noteData, videoId)
       setNoteData({unit:[0], content:""})
     } catch (err) {
       console.log(err)
@@ -41,6 +41,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user,}) => {
               <option name="unit" value={noteData.unit[""]}>4</option>
             </select>
             <textarea className="textArea" value={noteData.content} name="content" onChange={handleChange} id="" cols="120" rows="10" placeholder="Insert Notes Here..."></textarea>
+            <textarea hidden value={`${videoId}`} name="videoId" onChange={handleChange} cols="30" rows="10"></textarea>
             <button className='addBtn' disabled={isFormInvalid()} type="submit">Add</button>
           </div>
         </form>
