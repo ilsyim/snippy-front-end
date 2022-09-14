@@ -5,28 +5,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faPencil } from '@fortawesome/free-solid-svg-icons'
 
 
-const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
-
+const NoteShow = ({user, notes, setNotes, handleDeleteNote, videoId}) => {
 
   const handleAddNote = async (noteData) => {
-    const newNote = await noteService.addNote(noteData)
-    console.log(noteData, 'handleaddnote in noteshow')
+    const newNote = await noteService.addNote(noteData, videoId)
     setNotes([...notes, newNote])
-    console.log(notes, 'NOTES IN STATE')
   }
-
+  console.log('VIDEO ID HERE', videoId)
   return (
     <>
       <div className="scrollContainer">
         {notes.map((note, idx) => 
           <div key={idx}>
             <>
-            {user?.profile === note.owner._id &&
+            {user?.profile === note.owner._id && videoId === note.videoId &&
               <>
                 <div className='noteWithBtns'>
                   {note.content}
                     <div>
-                      <button className='edit'><Link className='edit'to='/edit' state={{note}}><FontAwesomeIcon icon={faPencil}/></Link></button>
+                      <button className='edit'><Link className='edit' to='/edit' state={{note, videoId}}><FontAwesomeIcon icon={faPencil}/></Link></button>
                       <button className='delete' onClick={() => handleDeleteNote(note._id)}><FontAwesomeIcon icon={faTrashCan}/></button>
                     </div>
                 </div>
@@ -36,7 +33,7 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote}) => {
           </div>
         )}
       </div>
-        <AddNote handleAddNote={handleAddNote} notes={notes} setNotes={setNotes} user={user} />
+        <AddNote handleAddNote={handleAddNote} notes={notes} setNotes={setNotes} user={user} videoId={videoId}/>
     </>
   )
 }

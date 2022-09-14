@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 
 
 const EditNote = (props) => {
@@ -15,7 +16,7 @@ const EditNote = (props) => {
     evt.preventDefault()
     try{
       props.handleUpdateNote(noteData)
-      navigate('/videoShow')
+      navigate('/videoShow', {state: {video: noteData}})
     } catch (err) {
       console.log(err)
     }
@@ -25,7 +26,7 @@ const EditNote = (props) => {
   const isFormInvalid = () => {
     return !(unit && content)
   }
-
+  
   return (
     <>
     <div className='editNote'>

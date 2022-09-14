@@ -2,7 +2,7 @@ import * as tokenService from '../services/tokenService'
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/notes`
 
-async function addNote(noteData) {
+async function addNote(noteData, videoId) {
   const res = await fetch(BASE_URL, {
     method: "POST",
     headers: { 
@@ -34,14 +34,14 @@ async function deleteNote(noteId) {
   return await res.json()
 }
 
-async function updateNote(noteData) {
+async function updateNote(noteData, videoId) {
   const res = await fetch(`${BASE_URL}/${noteData._id}`, {
     method: "PUT",
     headers: { 
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(noteData)
+    body: JSON.stringify(noteData, videoId)
   })
   return await res.json()
 }
