@@ -25,7 +25,7 @@ const AddNote = ({handleAddNote, setNotes, notes, user, videoId}) => {
 
   const {unit, content} = noteData
   const isFormInvalid = () => {
-    return !(unit && content)
+    return !(content)
   }
 
   return (
