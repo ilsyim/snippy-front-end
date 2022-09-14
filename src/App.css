@@ -3,6 +3,14 @@
   bottom: 40px;
 }
 
+.allVideos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .videoCard {
   display: flex;
   flex-direction: column;
@@ -13,6 +21,8 @@
   background-color: #daf44a;
   border: solid 3px white;
   border-radius: 50px;
+  width: 500px;
+  height: 500px;
 }
 
 .videoContainerDiv {
@@ -78,6 +88,12 @@
   background-color: #cfd8d7;
   width: 70vw;
 }
+
+/* .noteShow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 .takeNotes {
   text-shadow: 6px 6px 6px black;
@@ -164,6 +180,7 @@
 
 h2 {
   font-size: 30px;
+  text-align: center;
 }
 
 img {
@@ -240,4 +257,37 @@ iframe {
   display: flex;
   flex-direction: column;
   
+}
+
+.iframe {
+  width: 1000px;
+  height: 562px;
+}
+
+@media only screen and (max-width:500px) {
+  .videoCard {
+    width: 450px;
+    height: 450px;
+  }
+  .videoShow{
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .iframe {
+    width: 100vw;
+    height: 25vh;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .takeNotes {
+    margin-bottom: 20px;
+  }
+  .textArea {
+    width: 95vw;
+  }
 }

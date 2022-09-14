@@ -17,7 +17,7 @@ const VideoShow = (props) => {
 
           <div className="videoShow">
             <div><YoutubeEmbed1 videoId={location.state.noteData.videoId}/></div>
-            <div><NoteShow user={props.user}notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote} videoId={location.state.noteData.videoId}/></div>
+            <div className="noteShow"><NoteShow user={props.user}notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote} videoId={location.state.noteData.videoId}/></div>
           </div>
             }
     </>

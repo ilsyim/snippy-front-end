@@ -6,7 +6,7 @@ const VideoList = (props) => {
   return (
     <>
       {props.user ? 
-      <div>
+      <div className='allVideos'>
         {props.playlist.map((video, idx) =>
           <VideoCard key={idx} notes={props.notes} playlist={props.playlist} video={video}/>
           )}
