@@ -22,9 +22,9 @@ const EditNote = (props) => {
     }
   }
 
-  const {unit, content} = noteData
+  const {content} = noteData
   const isFormInvalid = () => {
-    return !(unit && content)
+    return !(content)
   }
   
   return (
@@ -33,19 +33,11 @@ const EditNote = (props) => {
       <h2 className='editH2'>Update your notes:</h2>
       <form onSubmit={handleSubmit} autoComplete="off">
       <div className='editForm'>
-        <select className='selectDropdown' name="unit" onChange={handleChange} >
-          <option>Select Unit</option>
-          <option name="unit" value={noteData.unit[""]}>1</option>
-          <option name="unit" value={noteData.unit[""]}>2</option>
-          <option name="unit" value={noteData.unit[""]}>3</option>
-          <option name="unit" value={noteData.unit[""]}>4</option>
-        </select>
         <textarea className="textArea" value={noteData.content} name="content" onChange={handleChange} id="" cols="100" rows="10" placeholder="Insert Notes Here..."></textarea>
         <button disabled={isFormInvalid()} type="submit">Edit</button>
       </div>
       </form>
     </div>
-      {}
     </>
   );
 }
