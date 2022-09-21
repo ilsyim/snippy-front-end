@@ -32,5 +32,4 @@ React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Font Awesome,
 ## Next Steps:
 - [ ] Grab the YouTube timestamp in the comment.
 - [x] Implement more/all YouTube videos.
-- [ ] Sort notes by unit.
 - [ ] Implement a searchbar in the navigation so User can search through all their notes by unit.

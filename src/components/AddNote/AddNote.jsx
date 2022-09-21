@@ -4,7 +4,6 @@ import { useState, useRef } from 'react';
 const AddNote = ({handleAddNote, setNotes, notes, user, videoId}) => {
   const formElement = useRef()
   const [noteData, setNoteData] = useState({
-    unit: "",
     content: "",
     videoId: `${videoId}`
   })
@@ -17,13 +16,13 @@ const AddNote = ({handleAddNote, setNotes, notes, user, videoId}) => {
     evt.preventDefault()
     try{
       handleAddNote(noteData, videoId)
-      setNoteData({unit:[0], content:""})
+      setNoteData({content:""})
     } catch (err) {
       console.log(err)
     }
   }
 
-  const {unit, content} = noteData
+  const {content} = noteData
   const isFormInvalid = () => {
     return !(content)
   }
@@ -33,13 +32,6 @@ const AddNote = ({handleAddNote, setNotes, notes, user, videoId}) => {
       <h2 className='takeNotes'>Take Notes While Reviewing the Video:</h2>
         <form onSubmit={handleSubmit} autoComplete="off" ref={formElement}>
           <div className='noteForm'>
-            <select className='selectDropdown' name="unit" onChange={handleChange} value={noteData.unit} >
-              <option>Select Unit</option>
-              <option name="unit" value={noteData.unit[""]}>1</option>
-              <option name="unit" value={noteData.unit[""]}>2</option>
-              <option name="unit" value={noteData.unit[""]}>3</option>
-              <option name="unit" value={noteData.unit[""]}>4</option>
-            </select>
             <textarea className="textArea" value={noteData.content} name="content" onChange={handleChange} id="" cols="120" rows="10" placeholder="Insert Notes Here..."></textarea>
             <textarea hidden value={`${videoId}`} name="videoId" onChange={handleChange} cols="30" rows="10"></textarea>
             <button className='addBtn' disabled={isFormInvalid()} type="submit">Add</button>
