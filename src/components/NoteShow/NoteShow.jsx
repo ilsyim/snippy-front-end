@@ -15,7 +15,7 @@ const NoteShow = ({user, notes, setNotes, handleDeleteNote, videoId}) => {
   return (
     <>
       <div className="scrollContainer">
-        {notes.map((note, idx) => 
+        {notes?.map((note, idx) => 
           <div key={idx}>
             <>
             {user?.profile === note.owner._id && videoId === note.videoId &&
