@@ -33,8 +33,6 @@ const App = () => {
   }
 
   const handleDeleteNote = async noteId => {
-
-    console.log(noteId)
     const deletedNote = await noteService.deleteNote(noteId)
     const newNotesArray = notes.filter(note => note._id !== deletedNote._id)
     setNotes(newNotesArray)
@@ -44,7 +42,6 @@ const App = () => {
     const updatedNote = await noteService.updateNote(noteData, videoId)
     const newNotesArray = notes.map(note => note._id === updatedNote._id ? updatedNote : note)
     setNotes(newNotesArray)
-    console.log(videoId)
     navigate('/videoShow', {state: {noteData: noteData, videoId: videoId}})
   }
 
