@@ -16,7 +16,8 @@ const EditNote = (props) => {
     evt.preventDefault()
     try{
       props.handleUpdateNote(noteData)
-      navigate('/videoShow', {state: {video: noteData}})
+      navigate('/videoShow', {state: {video: noteData, videoId: noteData.videoId}})
+      console.log('notedata*****', noteData.videoId)
     } catch (err) {
       console.log(err)
     }

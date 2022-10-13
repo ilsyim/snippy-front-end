@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import AddNote from '../AddNote/AddNote';
 import * as noteService from '../../services/noteService'
 import { Link } from 'react-router-dom';
@@ -6,12 +7,19 @@ import { faTrashCan, faPencil } from '@fortawesome/free-solid-svg-icons'
 
 
 const NoteShow = ({user, notes, setNotes, handleDeleteNote, videoId}) => {
+  useEffect(()=>{
+    const fetchNote = async() => {
+      const noteData = await noteService.show()
+      setNotes(noteData)
+    }
+    fetchNote()
+  },[setNotes])
 
   const handleAddNote = async (noteData) => {
     const newNote = await noteService.addNote(noteData, videoId)
     setNotes([...notes, newNote])
   }
-  console.log('VIDEO ID HERE', videoId)
+
   return (
     <>
       <div className="scrollContainer">

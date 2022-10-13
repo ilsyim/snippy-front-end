@@ -4,13 +4,21 @@ import { useLocation } from "react-router-dom";
 
 const VideoShow = (props) => {
   const location = useLocation()
-  console.log('location.state.video.videoId', location.state.video.videoId)
+
   return (
     <>
+      {location.state.video?.videoId ?
           <div className="videoShow">
             <div><YoutubeEmbed1 videoId={location.state.video.videoId}/></div>
             <div><NoteShow user={props.user}notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote} videoId={location.state.video.videoId}/></div>
           </div>
+      :
+          <div className="videoShow">
+            <div><YoutubeEmbed1 videoId={location.state.noteData.videoId}/></div>
+            <div><NoteShow user={props.user}notes={props.notes} setNotes={props.setNotes} handleDeleteNote= {props.handleDeleteNote} videoId={location.state.noteData.videoId}/></div>
+          </div>
+      }
+
     </>
   );
 }

@@ -4,7 +4,7 @@ const YoutubeEmbed1 = (props) => {
   return (
     <>
       <iframe 
-      src={`https://www.youtube.com/embed/${props.videoId}`}
+      src={`https://www.youtube-nocookie.com/embed/${props.videoId}`}
       frameBorder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowFullScreen 
