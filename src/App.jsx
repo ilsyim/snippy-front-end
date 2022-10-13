@@ -42,7 +42,6 @@ const App = () => {
     const updatedNote = await noteService.updateNote(noteData, videoId)
     const newNotesArray = notes.map(note => note._id === updatedNote._id ? updatedNote : note)
     setNotes(newNotesArray)
-    console.log(videoId)
     navigate('/videoShow', {state: {noteData: noteData, videoId: videoId}})
   }
 
