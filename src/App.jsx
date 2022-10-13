@@ -33,8 +33,6 @@ const App = () => {
   }
 
   const handleDeleteNote = async noteId => {
-
-    console.log(noteId)
     const deletedNote = await noteService.deleteNote(noteId)
     const newNotesArray = notes.filter(note => note._id !== deletedNote._id)
     setNotes(newNotesArray)

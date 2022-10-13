@@ -17,7 +17,6 @@ const EditNote = (props) => {
     try{
       props.handleUpdateNote(noteData)
       navigate('/videoShow', {state: {video: noteData, videoId: noteData.videoId}})
-      console.log('notedata*****', noteData.videoId)
     } catch (err) {
       console.log(err)
     }
