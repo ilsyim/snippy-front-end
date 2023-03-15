@@ -27,6 +27,7 @@ React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Font Awesome,
 - [MDN](https://developer.mozilla.org/en-US/)
 - [GitHub](https://github.com/)
 - [Rob Reynolds's YouTube playlist help](https://github.com/razorhollow)
+- [Beryl's help with Redeploy](https://github.com/berylrb)
 
 
 ## Next Steps:
